@@ -36,9 +36,17 @@ public class Screen: Synchronizable
     public private( set ) var onKeyPress = Event< Int32 >()
     public private( set ) var onUpdate   = Event< Void >()
 
-    private init()
+    private var screen: OpaquePointer
+
+    private init?()
     {
-        Curses.initscr()
+        guard let screen = Curses.newterm( getenv( "TERM" ), stdout, stdin )
+        else
+        {
+            return nil
+        }
+
+        self.screen = screen
 
         if Curses.has_colors()
         {
@@ -65,6 +73,7 @@ public class Screen: Synchronizable
         Curses.clrtoeol()
         Curses.refresh()
         Curses.endwin()
+        Curses.delscreen( self.screen )
     }
 
     public func clear()

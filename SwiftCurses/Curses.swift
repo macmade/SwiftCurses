@@ -205,4 +205,14 @@ internal class Curses
     {
         Darwin.wvline( window, ch, size )
     }
+
+    public class func newterm( _ term: UnsafeMutablePointer< CChar >?, _ stdout: UnsafeMutablePointer< FILE >, _ stdin: UnsafeMutablePointer< FILE > ) -> OpaquePointer?
+    {
+        Darwin.newterm( term, stdout, stdin )
+    }
+
+    public class func delscreen( _ screen: OpaquePointer )
+    {
+        Darwin.delscreen( screen )
+    }
 }

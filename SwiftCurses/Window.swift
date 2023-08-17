@@ -89,14 +89,14 @@ public class Window: Synchronizable
     {
         self.synchronized
         {
-            if Screen.shared.hasColors
+            if Screen.shared?.hasColors ?? false
             {
                 Curses.wattrset( self.win, Color.pair( foreground, background ) )
             }
 
             Curses.wprintw( self.win, text )
 
-            if Screen.shared.hasColors
+            if Screen.shared?.hasColors ?? false
             {
                 Curses.wattrset( self.win, Color.pair( .clear, .clear ) )
             }

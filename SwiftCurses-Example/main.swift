@@ -25,10 +25,17 @@
 import Foundation
 import SwiftCurses
 
-let update = Screen.shared.onUpdate.add
+guard let screen = Screen.shared
+else
 {
-    let win1 = Window( x: 0, y: 0, width: Int32( Screen.shared.width ), height: 3 )
-    let win2 = Window( x: 0, y: 3, width: Int32( Screen.shared.width ), height: 3 )
+    print( "Curses mode is not supported on this terminal." )
+    exit( 0 )
+}
+
+let update = screen.onUpdate.add
+{
+    let win1 = Window( x: 0, y: 0, width: Int32( screen.width ), height: 3 )
+    let win2 = Window( x: 0, y: 3, width: Int32( screen.width ), height: 3 )
 
     win1?.box()
     win1?.moveTo( x: 2, y: 1 )
@@ -40,7 +47,7 @@ let update = Screen.shared.onUpdate.add
     win2?.print( foreground: .cyan, text: "Window 2: hello, universe" )
     win2?.refresh()
 
-    Screen.shared.refresh()
+    screen.refresh()
 }
 
-Screen.shared.start()
+screen.start()
