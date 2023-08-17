@@ -7,8 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0564ACC12A8E0CAA00EF1950 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564ACC02A8E0CAA00EF1950 /* Colors.swift */; };
+		0564ACC12A8E0CAA00EF1950 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564ACC02A8E0CAA00EF1950 /* Color.swift */; };
+		0564ACC32A8E329300EF1950 /* Curses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564ACC22A8E329300EF1950 /* Curses.swift */; };
+		0564ACE42A8E83AB00EF1950 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564ACE32A8E83AB00EF1950 /* Screen.swift */; };
+		0564ACEE2A8E884400EF1950 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564ACED2A8E884400EF1950 /* Event.swift */; };
+		0564ACF22A8E889D00EF1950 /* EventObserverInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564ACF12A8E889D00EF1950 /* EventObserverInfo.swift */; };
+		0564ACFD2A8E989D00EF1950 /* Synchronizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564ACFC2A8E989D00EF1950 /* Synchronizable.swift */; };
+		0564AD052A8EA02500EF1950 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD042A8EA02500EF1950 /* main.swift */; };
+		0564AD0A2A8EA04900EF1950 /* libSwiftCurses.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0564AC752A8E0C5B00EF1950 /* libSwiftCurses.a */; };
+		0564AD0E2A8EA0C600EF1950 /* libncurses.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0564AD0D2A8EA0C000EF1950 /* libncurses.tbd */; };
+		0564AD192A8EA92B00EF1950 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD182A8EA92B00EF1950 /* Window.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0564AD0B2A8EA04900EF1950 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0564AC6D2A8E0C5B00EF1950 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0564AC742A8E0C5B00EF1950;
+			remoteInfo = SwiftCurses;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0564AD002A8EA02500EF1950 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0564AC752A8E0C5B00EF1950 /* libSwiftCurses.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSwiftCurses.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,7 +94,16 @@
 		0564ACBB2A8E0C8200EF1950 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0564ACBD2A8E0C8F00EF1950 /* FUNDING.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = FUNDING.yml; sourceTree = "<group>"; };
 		0564ACBF2A8E0C8F00EF1950 /* ci-mac.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "ci-mac.yaml"; sourceTree = "<group>"; };
-		0564ACC02A8E0CAA00EF1950 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		0564ACC02A8E0CAA00EF1950 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		0564ACC22A8E329300EF1950 /* Curses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curses.swift; sourceTree = "<group>"; };
+		0564ACE32A8E83AB00EF1950 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		0564ACED2A8E884400EF1950 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		0564ACF12A8E889D00EF1950 /* EventObserverInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventObserverInfo.swift; sourceTree = "<group>"; };
+		0564ACFC2A8E989D00EF1950 /* Synchronizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronizable.swift; sourceTree = "<group>"; };
+		0564AD022A8EA02500EF1950 /* SwiftCurses-Example */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "SwiftCurses-Example"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0564AD042A8EA02500EF1950 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		0564AD0D2A8EA0C000EF1950 /* libncurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.tbd; path = usr/lib/libncurses.tbd; sourceTree = SDKROOT; };
+		0564AD182A8EA92B00EF1950 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +111,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0564ACFF2A8EA02500EF1950 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0564AD0E2A8EA0C600EF1950 /* libncurses.tbd in Frameworks */,
+				0564AD0A2A8EA04900EF1950 /* libSwiftCurses.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +135,9 @@
 				0564ACBC2A8E0C8F00EF1950 /* .github */,
 				0564AC812A8E0C7C00EF1950 /* xcconfig */,
 				0564AC772A8E0C5B00EF1950 /* SwiftCurses */,
+				0564AD032A8EA02500EF1950 /* SwiftCurses-Example */,
 				0564AC762A8E0C5B00EF1950 /* Products */,
+				0564AD092A8EA04900EF1950 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				0564AC752A8E0C5B00EF1950 /* libSwiftCurses.a */,
+				0564AD022A8EA02500EF1950 /* SwiftCurses-Example */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,7 +153,13 @@
 		0564AC772A8E0C5B00EF1950 /* SwiftCurses */ = {
 			isa = PBXGroup;
 			children = (
-				0564ACC02A8E0CAA00EF1950 /* Colors.swift */,
+				0564ACC02A8E0CAA00EF1950 /* Color.swift */,
+				0564ACC22A8E329300EF1950 /* Curses.swift */,
+				0564ACED2A8E884400EF1950 /* Event.swift */,
+				0564ACF12A8E889D00EF1950 /* EventObserverInfo.swift */,
+				0564ACE32A8E83AB00EF1950 /* Screen.swift */,
+				0564ACFC2A8E989D00EF1950 /* Synchronizable.swift */,
+				0564AD182A8EA92B00EF1950 /* Window.swift */,
 			);
 			path = SwiftCurses;
 			sourceTree = "<group>";
@@ -249,6 +307,22 @@
 			path = workflows;
 			sourceTree = "<group>";
 		};
+		0564AD032A8EA02500EF1950 /* SwiftCurses-Example */ = {
+			isa = PBXGroup;
+			children = (
+				0564AD042A8EA02500EF1950 /* main.swift */,
+			);
+			path = "SwiftCurses-Example";
+			sourceTree = "<group>";
+		};
+		0564AD092A8EA04900EF1950 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0564AD0D2A8EA0C000EF1950 /* libncurses.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -279,6 +353,24 @@
 			productReference = 0564AC752A8E0C5B00EF1950 /* libSwiftCurses.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		0564AD012A8EA02500EF1950 /* SwiftCurses-Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0564AD062A8EA02500EF1950 /* Build configuration list for PBXNativeTarget "SwiftCurses-Example" */;
+			buildPhases = (
+				0564ACFE2A8EA02500EF1950 /* Sources */,
+				0564ACFF2A8EA02500EF1950 /* Frameworks */,
+				0564AD002A8EA02500EF1950 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0564AD0C2A8EA04900EF1950 /* PBXTargetDependency */,
+			);
+			name = "SwiftCurses-Example";
+			productName = "SwiftCurses-Example";
+			productReference = 0564AD022A8EA02500EF1950 /* SwiftCurses-Example */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -286,11 +378,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					0564AC742A8E0C5B00EF1950 = {
 						CreatedOnToolsVersion = 14.3.1;
 						LastSwiftMigration = 1430;
+					};
+					0564AD012A8EA02500EF1950 = {
+						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
 			};
@@ -308,6 +404,7 @@
 			projectRoot = "";
 			targets = (
 				0564AC742A8E0C5B00EF1950 /* SwiftCurses */,
+				0564AD012A8EA02500EF1950 /* SwiftCurses-Example */,
 			);
 		};
 /* End PBXProject section */
@@ -317,11 +414,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0564ACC12A8E0CAA00EF1950 /* Colors.swift in Sources */,
+				0564ACEE2A8E884400EF1950 /* Event.swift in Sources */,
+				0564ACC32A8E329300EF1950 /* Curses.swift in Sources */,
+				0564AD192A8EA92B00EF1950 /* Window.swift in Sources */,
+				0564ACFD2A8E989D00EF1950 /* Synchronizable.swift in Sources */,
+				0564ACF22A8E889D00EF1950 /* EventObserverInfo.swift in Sources */,
+				0564ACC12A8E0CAA00EF1950 /* Color.swift in Sources */,
+				0564ACE42A8E83AB00EF1950 /* Screen.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0564ACFE2A8EA02500EF1950 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0564AD052A8EA02500EF1950 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0564AD0C2A8EA04900EF1950 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0564AC742A8E0C5B00EF1950 /* SwiftCurses */;
+			targetProxy = 0564AD0B2A8EA04900EF1950 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0564AC7C2A8E0C5B00EF1950 /* Debug */ = {
@@ -358,6 +477,20 @@
 			};
 			name = Release;
 		};
+		0564AD072A8EA02500EF1950 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0564AD082A8EA02500EF1950 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -375,6 +508,15 @@
 			buildConfigurations = (
 				0564AC7F2A8E0C5B00EF1950 /* Debug */,
 				0564AC802A8E0C5B00EF1950 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0564AD062A8EA02500EF1950 /* Build configuration list for PBXNativeTarget "SwiftCurses-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0564AD072A8EA02500EF1950 /* Debug */,
+				0564AD082A8EA02500EF1950 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

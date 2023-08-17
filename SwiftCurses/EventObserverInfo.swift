@@ -22,21 +22,24 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-import Darwin.ncurses
 import Foundation
 
-public class Colors
+public class EventObserverInfo< T >
 {
-    private init()
-    {}
+    public let uuid = UUID()
 
-    public static var clear:   Int32 { -1 }
-    public static var black:   Int32 { COLOR_BLACK }
-    public static var red:     Int32 { COLOR_RED }
-    public static var green:   Int32 { COLOR_GREEN }
-    public static var yellow:  Int32 { COLOR_YELLOW }
-    public static var blue:    Int32 { COLOR_BLUE }
-    public static var magenta: Int32 { COLOR_MAGENTA }
-    public static var cyan:    Int32 { COLOR_CYAN }
-    public static var white:   Int32 { COLOR_WHITE }
+    private weak var event: Event< T >?
+
+    public init( event: Event< T > )
+    {
+        self.event = event
+    }
+
+    deinit
+    {
+        if let event = self.event
+        {
+            event.remove( observer: self )
+        }
+    }
 }

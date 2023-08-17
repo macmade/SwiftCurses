@@ -6,8 +6,10 @@ jobs:
         strategy:
             matrix:
                 run-config:
-                    - { scheme: 'SwiftCurses', configuration: 'Debug',   project: 'SwiftCurses.xcodeproj', build: 1, analyze: 1, test: 0, info: 1, destination: 'platform=macOS' }
-                    - { scheme: 'SwiftCurses', configuration: 'Release', project: 'SwiftCurses.xcodeproj', build: 1, analyze: 1, test: 0, info: 1, destination: 'platform=macOS' }
+                    - { scheme: 'SwiftCurses',         configuration: 'Debug',   project: 'SwiftCurses.xcodeproj', build: 1, analyze: 1, test: 0, info: 1, destination: 'platform=macOS' }
+                    - { scheme: 'SwiftCurses',         configuration: 'Release', project: 'SwiftCurses.xcodeproj', build: 1, analyze: 1, test: 0, info: 1, destination: 'platform=macOS' }
+                    - { scheme: 'SwiftCurses-Example', configuration: 'Debug',   project: 'SwiftCurses.xcodeproj', build: 1, analyze: 1, test: 0, info: 1, destination: 'platform=macOS' }
+                    - { scheme: 'SwiftCurses-Example', configuration: 'Release', project: 'SwiftCurses.xcodeproj', build: 1, analyze: 1, test: 0, info: 1, destination: 'platform=macOS' }
         steps:
             
             - uses: actions/checkout@v1
