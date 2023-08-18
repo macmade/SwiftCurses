@@ -24,7 +24,7 @@
 
 import Foundation
 
-public struct Size
+public struct Size: CustomStringConvertible
 {
     public static let zero = Size( width: 0, height: 0 )
 
@@ -35,5 +35,10 @@ public struct Size
     {
         self.width  = width
         self.height = height
+    }
+
+    public var description: String
+    {
+        "Size( width: \( self.width ), height: \( self.height ) )"
     }
 }

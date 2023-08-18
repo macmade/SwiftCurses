@@ -24,7 +24,7 @@
 
 import Foundation
 
-public struct Rect
+public struct Rect: CustomStringConvertible
 {
     public static let zero = Rect( origin: .zero, size: .zero )
 
@@ -41,5 +41,10 @@ public struct Rect
     {
         self.origin = origin
         self.size   = size
+    }
+
+    public var description: String
+    {
+        "Rect( origin: \( self.origin ), size: \( self.size ) )"
     }
 }

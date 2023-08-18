@@ -24,7 +24,7 @@
 
 import Foundation
 
-public struct Point
+public struct Point: CustomStringConvertible
 {
     public static let zero = Point( x: 0, y: 0 )
 
@@ -35,5 +35,10 @@ public struct Point
     {
         self.x = x
         self.y = y
+    }
+
+    public var description: String
+    {
+        "Point( x: \( self.x ), y: \( self.y ) )"
     }
 }
