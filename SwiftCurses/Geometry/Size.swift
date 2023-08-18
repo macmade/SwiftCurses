@@ -39,6 +39,6 @@ public struct Size: CustomStringConvertible
 
     public var description: String
     {
-        "Size( width: \( self.width ), height: \( self.height ) )"
+        "\( self.width )x\( self.height )"
     }
 }

@@ -39,6 +39,6 @@ public struct Point: CustomStringConvertible
 
     public var description: String
     {
-        "Point( x: \( self.x ), y: \( self.y ) )"
+        "\( self.x ),\( self.y )"
     }
 }

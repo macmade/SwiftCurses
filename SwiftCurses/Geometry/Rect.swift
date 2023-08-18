@@ -45,6 +45,6 @@ public struct Rect: CustomStringConvertible
 
     public var description: String
     {
-        "Rect( origin: \( self.origin ), size: \( self.size ) )"
+        "{ \( self.origin ) @ \( self.size ) }"
     }
 }
