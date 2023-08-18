@@ -26,26 +26,19 @@ import Foundation
 
 public class Window: Synchronizable
 {
-    public private( set ) var x:      Int32
-    public private( set ) var y:      Int32
-    public private( set ) var width:  Int32
-    public private( set ) var height: Int32
+    public private( set ) var frame: Rect
+    public private( set ) var win:   OpaquePointer
 
-    private var win: OpaquePointer
-
-    public init?( x: Int32, y: Int32, width: Int32, height: Int32 )
+    public init?( frame: Rect )
     {
-        guard let win = Curses.newwin( height, width, y, x )
+        guard let win = Curses.newwin( frame.size.height, frame.size.width, frame.origin.y, frame.origin.x )
         else
         {
             return nil
         }
 
-        self.x      = x
-        self.y      = y
-        self.width  = width
-        self.height = height
-        self.win    = win
+        self.frame = frame
+        self.win   = win
     }
 
     deinit
@@ -61,11 +54,11 @@ public class Window: Synchronizable
         }
     }
 
-    public func moveTo( x: Int32, y: Int32 )
+    public func moveTo( point: Point )
     {
         self.synchronized
         {
-            Curses.wmove( self.win, y, x )
+            Curses.wmove( self.win, point.y, point.x )
         }
     }
 

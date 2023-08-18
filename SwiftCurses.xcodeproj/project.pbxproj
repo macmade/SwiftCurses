@@ -16,7 +16,10 @@
 		0564AD052A8EA02500EF1950 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD042A8EA02500EF1950 /* main.swift */; };
 		0564AD0A2A8EA04900EF1950 /* libSwiftCurses.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0564AC752A8E0C5B00EF1950 /* libSwiftCurses.a */; };
 		0564AD0E2A8EA0C600EF1950 /* libncurses.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0564AD0D2A8EA0C000EF1950 /* libncurses.tbd */; };
-		0564AD192A8EA92B00EF1950 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD182A8EA92B00EF1950 /* Window.swift */; };
+		0564AD3A2A8F639300EF1950 /* Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD392A8F639300EF1950 /* Rect.swift */; };
+		0564AD3D2A8F63A400EF1950 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD3C2A8F63A400EF1950 /* Point.swift */; };
+		0564AD402A8F63AE00EF1950 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD3F2A8F63AE00EF1950 /* Size.swift */; };
+		0564AD432A8F6B1700EF1950 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD422A8F6B1700EF1950 /* Window.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,7 +106,10 @@
 		0564AD022A8EA02500EF1950 /* SwiftCurses-Example */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "SwiftCurses-Example"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0564AD042A8EA02500EF1950 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0564AD0D2A8EA0C000EF1950 /* libncurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.tbd; path = usr/lib/libncurses.tbd; sourceTree = SDKROOT; };
-		0564AD182A8EA92B00EF1950 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		0564AD392A8F639300EF1950 /* Rect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rect.swift; sourceTree = "<group>"; };
+		0564AD3C2A8F63A400EF1950 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		0564AD3F2A8F63AE00EF1950 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		0564AD422A8F6B1700EF1950 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,11 +161,10 @@
 			children = (
 				0564ACC02A8E0CAA00EF1950 /* Color.swift */,
 				0564ACC22A8E329300EF1950 /* Curses.swift */,
-				0564ACED2A8E884400EF1950 /* Event.swift */,
-				0564ACF12A8E889D00EF1950 /* EventObserverInfo.swift */,
+				0564AD3B2A8F639700EF1950 /* Geometry */,
 				0564ACE32A8E83AB00EF1950 /* Screen.swift */,
-				0564ACFC2A8E989D00EF1950 /* Synchronizable.swift */,
-				0564AD182A8EA92B00EF1950 /* Window.swift */,
+				0564AD412A8F650D00EF1950 /* Utility */,
+				0564AD422A8F6B1700EF1950 /* Window.swift */,
 			);
 			path = SwiftCurses;
 			sourceTree = "<group>";
@@ -323,6 +328,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		0564AD3B2A8F639700EF1950 /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				0564AD3C2A8F63A400EF1950 /* Point.swift */,
+				0564AD392A8F639300EF1950 /* Rect.swift */,
+				0564AD3F2A8F63AE00EF1950 /* Size.swift */,
+			);
+			path = Geometry;
+			sourceTree = "<group>";
+		};
+		0564AD412A8F650D00EF1950 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				0564ACED2A8E884400EF1950 /* Event.swift */,
+				0564ACF12A8E889D00EF1950 /* EventObserverInfo.swift */,
+				0564ACFC2A8E989D00EF1950 /* Synchronizable.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -416,8 +441,11 @@
 			files = (
 				0564ACEE2A8E884400EF1950 /* Event.swift in Sources */,
 				0564ACC32A8E329300EF1950 /* Curses.swift in Sources */,
-				0564AD192A8EA92B00EF1950 /* Window.swift in Sources */,
+				0564AD3A2A8F639300EF1950 /* Rect.swift in Sources */,
 				0564ACFD2A8E989D00EF1950 /* Synchronizable.swift in Sources */,
+				0564AD3D2A8F63A400EF1950 /* Point.swift in Sources */,
+				0564AD402A8F63AE00EF1950 /* Size.swift in Sources */,
+				0564AD432A8F6B1700EF1950 /* Window.swift in Sources */,
 				0564ACF22A8E889D00EF1950 /* EventObserverInfo.swift in Sources */,
 				0564ACC12A8E0CAA00EF1950 /* Color.swift in Sources */,
 				0564ACE42A8E83AB00EF1950 /* Screen.swift in Sources */,
