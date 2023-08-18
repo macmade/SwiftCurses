@@ -32,22 +32,70 @@ else
     exit( 0 )
 }
 
-let update = screen.onUpdate.add
+screen.addWindow( frame: Rect( origin: .zero, size: Size( width: 0, height: 10 ) ), style: .boxed )
 {
-    let win1 = Window( x: 0, y: 0, width: Int32( screen.width ), height: 3 )
-    let win2 = Window( x: 0, y: 3, width: Int32( screen.width ), height: 3 )
+    $0.print( text: "Window: " )
+    $0.print( foreground: .yellow, text: "\( $0.frame )" )
+    $0.print( text: " - " )
+    $0.print( foreground: .cyan, text: "hello, world" )
+    $0.newLine()
+    $0.printLine( text: "hello, universe" )
+    $0.printLine( foreground: .red, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." )
+}
 
-    win1?.box()
-    win1?.moveTo( x: 2, y: 1 )
-    win1?.print( foreground: .magenta, text: "Window 1: hello, world" )
-    win1?.refresh()
+screen.addWindow( frame: Rect( origin: Point( x: 0, y: 10 ), size: Size( width: 100, height: 10 ) ), style: .boxed )
+{
+    $0.print( text: "Window: " )
+    $0.print( foreground: .yellow, text: "\( $0.frame )" )
+    $0.print( text: " - " )
+    $0.print( foreground: .cyan, text: "hello, world" )
+    $0.newLine()
+    $0.printLine( text: "hello, universe" )
+    $0.printLine( foreground: .red, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." )
+}
 
-    win2?.box()
-    win2?.moveTo( x: 2, y: 1 )
-    win2?.print( foreground: .cyan, text: "Window 2: hello, universe" )
-    win2?.refresh()
+screen.addWindow( frame: Rect( origin: Point( x: 100, y: 10 ), size: Size( width: 100, height: 10 ) ), style: .boxed )
+{
+    $0.print( text: "Window: " )
+    $0.print( foreground: .yellow, text: "\( $0.frame )" )
+    $0.print( text: " - " )
+    $0.print( foreground: .cyan, text: "hello, world" )
+    $0.newLine()
+    $0.printLine( text: "hello, universe" )
+    $0.printLine( foreground: .red, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." )
+}
 
-    screen.refresh()
+screen.addWindow( frame: Rect( origin: Point( x: 200, y: 10 ), size: Size( width: 0, height: 10 ) ), style: .boxed )
+{
+    $0.print( text: "Window: " )
+    $0.print( foreground: .yellow, text: "\( $0.frame )" )
+    $0.print( text: " - " )
+    $0.print( foreground: .cyan, text: "hello, world" )
+    $0.newLine()
+    $0.printLine( text: "hello, universe" )
+    $0.printLine( foreground: .red, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." )
+}
+
+screen.addWindow( frame: Rect( origin: Point( x: 0, y: 20 ), size: Size( width: 100, height: 0 ) ), style: .boxed )
+{
+    $0.print( text: "Window: " )
+    $0.print( foreground: .yellow, text: "\( $0.frame )" )
+    $0.print( text: " - " )
+    $0.print( foreground: .cyan, text: "hello, world" )
+    $0.newLine()
+    $0.printLine( text: "hello, universe" )
+    $0.printLine( foreground: .red, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." )
+}
+
+screen.addWindow( frame: Rect( origin: Point( x: 100, y: 20 ), size: Size( width: 0, height: 0 ) ), style: .boxed )
+{
+    $0.print( text: "Window: " )
+    $0.print( foreground: .yellow, text: "\( $0.frame )" )
+    $0.print( text: " - " )
+    $0.print( foreground: .cyan, text: "hello, world" )
+    $0.newLine()
+    $0.printLine( text: "hello, universe" )
+    $0.printLine( foreground: .red, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." )
 }
 
 screen.start()

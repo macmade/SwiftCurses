@@ -36,7 +36,8 @@ public class Screen: Synchronizable
     public private( set ) var onKeyPress = Event< Int32 >()
     public private( set ) var onUpdate   = Event< Void >()
 
-    private var screen: OpaquePointer
+    private var screen:  OpaquePointer
+    private var windows: [ ( frame: Rect, style: ManagedWindow.Style, update: ( ManagedWindow ) -> Void ) ] = []
 
     private init?()
     {
@@ -172,6 +173,8 @@ public class Screen: Synchronizable
                     self.width  = s.ws_col
                     self.height = s.ws_row
                     onResize    = { self.onResize.fire() }
+
+                    self.clear()
                 }
 
                 var p     = pollfd()
@@ -188,6 +191,34 @@ public class Screen: Synchronizable
 
             onResize()
             onKeyPress()
+
+            self.windows.forEach
+            {
+                var frame = $0.frame
+
+                if frame.size.width  <= 0 { frame.size.width  = Int32( self.width  ) - frame.origin.x }
+                if frame.size.height <= 0 { frame.size.height = Int32( self.height ) - frame.origin.y }
+
+                if frame.origin.x >= self.width  { return }
+                if frame.origin.y >= self.height { return }
+
+                if frame.origin.x + frame.size.width  > self.width  { frame.size.width  -= ( frame.origin.x + frame.size.width  ) - Int32( self.width  ) }
+                if frame.origin.y + frame.size.height > self.height { frame.size.height -= ( frame.origin.y + frame.size.height ) - Int32( self.height ) }
+
+                if frame.size.width  <= 2 { return }
+                if frame.size.height <= 2 { return }
+
+                guard let window = ManagedWindow( frame: frame, style: $0.style )
+                else
+                {
+                    return
+                }
+
+                $0.update( window )
+                window.refresh()
+                self.refresh()
+            }
+
             self.onUpdate.fire()
             self.refresh()
         }
@@ -202,6 +233,14 @@ public class Screen: Synchronizable
         self.synchronized
         {
             self.isRunning = false
+        }
+    }
+
+    public func addWindow( frame: Rect, style: ManagedWindow.Style, update: @escaping ( ManagedWindow ) -> Void )
+    {
+        self.synchronized
+        {
+            self.windows.append( ( frame: frame, style: style, update: update ) )
         }
     }
 }

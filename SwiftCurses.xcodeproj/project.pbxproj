@@ -20,6 +20,7 @@
 		0564AD3D2A8F63A400EF1950 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD3C2A8F63A400EF1950 /* Point.swift */; };
 		0564AD402A8F63AE00EF1950 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD3F2A8F63AE00EF1950 /* Size.swift */; };
 		0564AD432A8F6B1700EF1950 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD422A8F6B1700EF1950 /* Window.swift */; };
+		0564AD452A8F6FF600EF1950 /* ManagedWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD442A8F6FF600EF1950 /* ManagedWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		0564AD3C2A8F63A400EF1950 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		0564AD3F2A8F63AE00EF1950 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		0564AD422A8F6B1700EF1950 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		0564AD442A8F6FF600EF1950 /* ManagedWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				0564ACC02A8E0CAA00EF1950 /* Color.swift */,
 				0564ACC22A8E329300EF1950 /* Curses.swift */,
 				0564AD3B2A8F639700EF1950 /* Geometry */,
+				0564AD442A8F6FF600EF1950 /* ManagedWindow.swift */,
 				0564ACE32A8E83AB00EF1950 /* Screen.swift */,
 				0564AD412A8F650D00EF1950 /* Utility */,
 				0564AD422A8F6B1700EF1950 /* Window.swift */,
@@ -443,6 +446,7 @@
 				0564ACC32A8E329300EF1950 /* Curses.swift in Sources */,
 				0564AD3A2A8F639300EF1950 /* Rect.swift in Sources */,
 				0564ACFD2A8E989D00EF1950 /* Synchronizable.swift in Sources */,
+				0564AD452A8F6FF600EF1950 /* ManagedWindow.swift in Sources */,
 				0564AD3D2A8F63A400EF1950 /* Point.swift in Sources */,
 				0564AD402A8F63AE00EF1950 /* Size.swift in Sources */,
 				0564AD432A8F6B1700EF1950 /* Window.swift in Sources */,
