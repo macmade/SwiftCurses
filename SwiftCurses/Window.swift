@@ -123,7 +123,7 @@ public class Window: Synchronizable
     {
         self.synchronized
         {
-            Curses.whline( self.win, 0, height )
+            Curses.wvline( self.win, 0, height )
         }
     }
 }
