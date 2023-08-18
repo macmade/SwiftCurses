@@ -38,6 +38,11 @@ public class ManagedWindow: Synchronizable
     public private( set ) var currentPoint: Point
     public private( set ) var drawRect:     Rect
 
+    public var bounds: Rect
+    {
+        Rect( x: 0, y: 0, width: self.drawRect.size.width, height: self.drawRect.size.height )
+    }
+
     public init?( frame: Rect, style: Style )
     {
         guard let win = Curses.newwin( frame.size.height, frame.size.width, frame.origin.y, frame.origin.x )
