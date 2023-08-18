@@ -55,7 +55,7 @@ public class ManagedWindow: Synchronizable
         {
             Curses.box( self.win, 0, 0 )
 
-            self.drawRect = Rect( x: 1, y: 1, width: frame.size.width - 2, height: frame.size.height - 2 )
+            self.drawRect = Rect( x: 2, y: 1, width: frame.size.width - 4, height: frame.size.height - 2 )
         }
         else
         {
@@ -128,7 +128,7 @@ public class ManagedWindow: Synchronizable
 
     private func printableText( text: String ) -> String
     {
-        let available = Int( ( self.drawRect.origin.x + self.drawRect.size.width ) - self.currentPoint.x ) - 1
+        let available = Int( ( self.drawRect.origin.x + self.drawRect.size.width ) - self.currentPoint.x ) - Int( self.drawRect.origin.x )
 
         if self.currentPoint.y == self.drawRect.size.height
         {
@@ -227,15 +227,38 @@ public class ManagedWindow: Synchronizable
         self.moveTo( x: 0, y: self.currentPoint.y + 1 )
     }
 
-    public func addHorizontalLine( width: Int32 )
+    public func horizontalRuler( width: Int32 )
     {
         self.synchronized
-        {}
+        {
+            let maxWidth = self.drawRect.size.width - self.currentPoint.x
+            let width    = width > maxWidth ? maxWidth : width
+
+            Curses.whline( self.win, 0, width )
+            self.moveX( by: width )
+        }
     }
 
-    public func addVerticalLine( height: Int32 )
+    public func verticalRuler( height: Int32 )
     {
         self.synchronized
-        {}
+        {
+            let maxHeight = self.drawRect.size.height - self.currentPoint.y
+            let height    = height > maxHeight ? maxHeight : height
+
+            Curses.wvline( self.win, 0, height )
+            self.moveY( by: height )
+        }
+    }
+
+    public func separator()
+    {
+        if self.currentPoint.x != 0
+        {
+            self.newLine()
+        }
+
+        self.horizontalRuler( width: Int32.max )
+        self.newLine()
     }
 }

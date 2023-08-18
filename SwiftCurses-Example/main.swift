@@ -32,70 +32,45 @@ else
     exit( 0 )
 }
 
+func drawContent( for window: ManagedWindow )
+{
+    window.print( text: "Window: " )
+    window.print( foreground: .yellow, text: "\( window.frame )" )
+    window.print( text: " - " )
+    window.print( foreground: .cyan, text: "hello, world" )
+    window.separator()
+    window.printLine( text: "hello, universe" )
+    window.printLine( foreground: .red, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." )
+}
+
 screen.addWindow( frame: Rect( origin: .zero, size: Size( width: 0, height: 10 ) ), style: .boxed )
 {
-    $0.print( text: "Window: " )
-    $0.print( foreground: .yellow, text: "\( $0.frame )" )
-    $0.print( text: " - " )
-    $0.print( foreground: .cyan, text: "hello, world" )
-    $0.newLine()
-    $0.printLine( text: "hello, universe" )
-    $0.printLine( foreground: .red, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." )
+    drawContent( for: $0 )
 }
 
 screen.addWindow( frame: Rect( origin: Point( x: 0, y: 10 ), size: Size( width: 100, height: 10 ) ), style: .boxed )
 {
-    $0.print( text: "Window: " )
-    $0.print( foreground: .yellow, text: "\( $0.frame )" )
-    $0.print( text: " - " )
-    $0.print( foreground: .cyan, text: "hello, world" )
-    $0.newLine()
-    $0.printLine( text: "hello, universe" )
-    $0.printLine( foreground: .red, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." )
+    drawContent( for: $0 )
 }
 
 screen.addWindow( frame: Rect( origin: Point( x: 100, y: 10 ), size: Size( width: 100, height: 10 ) ), style: .boxed )
 {
-    $0.print( text: "Window: " )
-    $0.print( foreground: .yellow, text: "\( $0.frame )" )
-    $0.print( text: " - " )
-    $0.print( foreground: .cyan, text: "hello, world" )
-    $0.newLine()
-    $0.printLine( text: "hello, universe" )
-    $0.printLine( foreground: .red, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." )
+    drawContent( for: $0 )
 }
 
 screen.addWindow( frame: Rect( origin: Point( x: 200, y: 10 ), size: Size( width: 0, height: 10 ) ), style: .boxed )
 {
-    $0.print( text: "Window: " )
-    $0.print( foreground: .yellow, text: "\( $0.frame )" )
-    $0.print( text: " - " )
-    $0.print( foreground: .cyan, text: "hello, world" )
-    $0.newLine()
-    $0.printLine( text: "hello, universe" )
-    $0.printLine( foreground: .red, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." )
+    drawContent( for: $0 )
 }
 
 screen.addWindow( frame: Rect( origin: Point( x: 0, y: 20 ), size: Size( width: 100, height: 0 ) ), style: .boxed )
 {
-    $0.print( text: "Window: " )
-    $0.print( foreground: .yellow, text: "\( $0.frame )" )
-    $0.print( text: " - " )
-    $0.print( foreground: .cyan, text: "hello, world" )
-    $0.newLine()
-    $0.printLine( text: "hello, universe" )
-    $0.printLine( foreground: .red, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." )
+    drawContent( for: $0 )
 }
 
 screen.addWindow( frame: Rect( origin: Point( x: 100, y: 20 ), size: Size( width: 0, height: 0 ) ), style: .boxed )
 {
-    $0.print( text: "Window: " )
-    $0.print( foreground: .yellow, text: "\( $0.frame )" )
-    $0.print( text: " - " )
-    $0.print( foreground: .cyan, text: "hello, world" )
-    $0.newLine()
-    $0.printLine( text: "hello, universe" )
-    $0.printLine( foreground: .red, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." )
+    drawContent( for: $0 )
 }
 
 screen.start()

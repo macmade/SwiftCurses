@@ -104,7 +104,7 @@ public class Window: Synchronizable
         }
     }
 
-    public func addHorizontalLine( width: Int32 )
+    public func horizontalRuler( width: Int32 )
     {
         self.synchronized
         {
@@ -112,7 +112,7 @@ public class Window: Synchronizable
         }
     }
 
-    public func addVerticalLine( height: Int32 )
+    public func verticalRuler( height: Int32 )
     {
         self.synchronized
         {
