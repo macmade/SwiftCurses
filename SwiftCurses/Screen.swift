@@ -57,16 +57,7 @@ public class Screen: Synchronizable
             Curses.use_default_colors()
         }
 
-        self.clear()
-        Curses.noecho()
-        Curses.cbreak()
-        Curses.keypad( Curses.stdscr, true )
-        self.refresh()
-
-        var s       = winsize()
-        _           = ioctl( STDOUT_FILENO, TIOCGWINSZ, &s )
-        self.width  = s.ws_col
-        self.height = s.ws_row
+        self.initialize()
     }
 
     deinit
@@ -75,6 +66,30 @@ public class Screen: Synchronizable
         Curses.refresh()
         Curses.endwin()
         Curses.delscreen( self.screen )
+    }
+
+    private func initialize()
+    {
+        self.clear()
+        Curses.noecho()
+        Curses.cbreak()
+        Curses.keypad( Curses.stdscr, true )
+        Curses.curs_set( 0 )
+        self.refresh()
+
+        var s       = winsize()
+        _           = ioctl( STDOUT_FILENO, TIOCGWINSZ, &s )
+        self.width  = s.ws_col
+        self.height = s.ws_row
+    }
+
+    private func deinitialize()
+    {
+        self.clear()
+        self.refresh()
+
+        Curses.curs_set( 1 )
+        Curses.endwin()
     }
 
     public func clear()
@@ -151,7 +166,7 @@ public class Screen: Synchronizable
             return
         }
 
-        Curses.curs_set( 0 )
+        self.initialize()
 
         while true
         {
@@ -223,9 +238,7 @@ public class Screen: Synchronizable
             self.refresh()
         }
 
-        self.clear()
-        self.refresh()
-        Curses.curs_set( 1 )
+        self.deinitialize()
     }
 
     public func stop()
