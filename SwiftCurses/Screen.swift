@@ -37,7 +37,7 @@ public class Screen: Synchronizable
     public private( set ) var onUpdate   = Event< Void >()
 
     private var screen:  OpaquePointer
-    private var windows: [ ( frame: Rect, style: ManagedWindow.Style, update: ( ManagedWindow ) -> Void ) ] = []
+    private var windows: [ Either< ( frame: Rect, style: ManagedWindow.Style, update: ( ManagedWindow ) -> Void ), WindowBuilder > ] = []
 
     private init?()
     {
@@ -209,7 +209,24 @@ public class Screen: Synchronizable
 
             self.windows.forEach
             {
-                var frame = $0.frame
+                var frame:  Rect
+                let style:  ManagedWindow.Style
+                let update: ( ManagedWindow ) -> Void
+
+                switch $0
+                {
+                    case .left( let info ):
+
+                        frame  = info.frame
+                        style  = info.style
+                        update = info.update
+
+                    case .right( let builder ):
+
+                        frame  = builder.desiredFame
+                        style  = builder.style
+                        update = builder.render( on: )
+                }
 
                 if frame.size.width  <= 0 { frame.size.width  = Int32( self.width  ) - frame.origin.x }
                 if frame.size.height <= 0 { frame.size.height = Int32( self.height ) - frame.origin.y }
@@ -223,13 +240,13 @@ public class Screen: Synchronizable
                 if frame.size.width  <= 2 { return }
                 if frame.size.height <= 2 { return }
 
-                guard let window = ManagedWindow( frame: frame, style: $0.style )
+                guard let window = ManagedWindow( frame: frame, style: style )
                 else
                 {
                     return
                 }
 
-                $0.update( window )
+                update( window )
                 window.refresh()
                 self.refresh()
             }
@@ -249,11 +266,19 @@ public class Screen: Synchronizable
         }
     }
 
+    public func addWindow( builder: WindowBuilder )
+    {
+        self.synchronized
+        {
+            self.windows.append( .right( builder ) )
+        }
+    }
+
     public func addWindow( frame: Rect, style: ManagedWindow.Style, update: @escaping ( ManagedWindow ) -> Void )
     {
         self.synchronized
         {
-            self.windows.append( ( frame: frame, style: style, update: update ) )
+            self.windows.append( .left( ( frame: frame, style: style, update: update ) ) )
         }
     }
 }

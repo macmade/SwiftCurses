@@ -21,6 +21,8 @@
 		0564AD402A8F63AE00EF1950 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD3F2A8F63AE00EF1950 /* Size.swift */; };
 		0564AD432A8F6B1700EF1950 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD422A8F6B1700EF1950 /* Window.swift */; };
 		0564AD452A8F6FF600EF1950 /* ManagedWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD442A8F6FF600EF1950 /* ManagedWindow.swift */; };
+		0564AD792A90E2A300EF1950 /* WindowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD782A90E2A300EF1950 /* WindowBuilder.swift */; };
+		0564AD7C2A90E34100EF1950 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD7B2A90E34100EF1950 /* Either.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +114,8 @@
 		0564AD3F2A8F63AE00EF1950 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		0564AD422A8F6B1700EF1950 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		0564AD442A8F6FF600EF1950 /* ManagedWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedWindow.swift; sourceTree = "<group>"; };
+		0564AD782A90E2A300EF1950 /* WindowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowBuilder.swift; sourceTree = "<group>"; };
+		0564AD7B2A90E34100EF1950 /* Either.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,7 @@
 				0564ACE32A8E83AB00EF1950 /* Screen.swift */,
 				0564AD412A8F650D00EF1950 /* Utility */,
 				0564AD422A8F6B1700EF1950 /* Window.swift */,
+				0564AD782A90E2A300EF1950 /* WindowBuilder.swift */,
 			);
 			path = SwiftCurses;
 			sourceTree = "<group>";
@@ -344,6 +349,7 @@
 		0564AD412A8F650D00EF1950 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				0564AD7B2A90E34100EF1950 /* Either.swift */,
 				0564ACED2A8E884400EF1950 /* Event.swift */,
 				0564ACF12A8E889D00EF1950 /* EventObserverInfo.swift */,
 				0564ACFC2A8E989D00EF1950 /* Synchronizable.swift */,
@@ -443,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0564ACEE2A8E884400EF1950 /* Event.swift in Sources */,
+				0564AD792A90E2A300EF1950 /* WindowBuilder.swift in Sources */,
 				0564ACC32A8E329300EF1950 /* Curses.swift in Sources */,
 				0564AD3A2A8F639300EF1950 /* Rect.swift in Sources */,
 				0564ACFD2A8E989D00EF1950 /* Synchronizable.swift in Sources */,
@@ -450,6 +457,7 @@
 				0564AD3D2A8F63A400EF1950 /* Point.swift in Sources */,
 				0564AD402A8F63AE00EF1950 /* Size.swift in Sources */,
 				0564AD432A8F6B1700EF1950 /* Window.swift in Sources */,
+				0564AD7C2A90E34100EF1950 /* Either.swift in Sources */,
 				0564ACF22A8E889D00EF1950 /* EventObserverInfo.swift in Sources */,
 				0564ACC12A8E0CAA00EF1950 /* Color.swift in Sources */,
 				0564ACE42A8E83AB00EF1950 /* Screen.swift in Sources */,
