@@ -36,5 +36,6 @@ public protocol WindowBuilder
         get
     }
 
+    func shouldBeRendered() -> Bool
     func render( on window: ManagedWindow )
 }

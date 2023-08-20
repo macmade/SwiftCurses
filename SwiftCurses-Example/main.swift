@@ -73,4 +73,23 @@ screen.addWindow( frame: Rect( origin: Point( x: 100, y: 20 ), size: Size( width
     drawContent( for: $0 )
 }
 
+screen.addWindow( builder: TestWindow())
+
 screen.start()
+
+class TestWindow: WindowBuilder
+{
+    var desiredFame = Rect( x: -1, y: -1, width: 50, height: 4 )
+    var style       = ManagedWindow.Style.boxed
+
+    func shouldBeRendered() -> Bool
+    {
+        true
+    }
+
+    func render( on window: SwiftCurses.ManagedWindow )
+    {
+        window.printLine( text: "hello, world" )
+        window.printLine( text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." )
+    }
+}

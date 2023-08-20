@@ -207,11 +207,14 @@ public class Screen: Synchronizable
             onResize()
             onKeyPress()
 
+            var managed: [ ManagedWindow ] = []
+
             self.windows.forEach
             {
                 var frame:  Rect
                 let style:  ManagedWindow.Style
                 let update: ( ManagedWindow ) -> Void
+                let render: Bool
 
                 switch $0
                 {
@@ -220,12 +223,20 @@ public class Screen: Synchronizable
                         frame  = info.frame
                         style  = info.style
                         update = info.update
+                        render = true
 
                     case .right( let builder ):
 
                         frame  = builder.desiredFame
                         style  = builder.style
                         update = builder.render( on: )
+                        render = builder.shouldBeRendered()
+                }
+
+                guard render
+                else
+                {
+                    return
                 }
 
                 if frame.size.width  <= 0 { frame.size.width  = Int32( self.width  ) - frame.origin.x }
@@ -233,6 +244,9 @@ public class Screen: Synchronizable
 
                 if frame.origin.x >= self.width  { return }
                 if frame.origin.y >= self.height { return }
+
+                if frame.origin.x < 0 { frame.origin.x = ( Int32( self.width  ) - frame.size.width  ) / 2 }
+                if frame.origin.y < 0 { frame.origin.y = ( Int32( self.height ) - frame.size.height ) / 2 }
 
                 if frame.origin.x + frame.size.width  > self.width  { frame.size.width  -= ( frame.origin.x + frame.size.width  ) - Int32( self.width  ) }
                 if frame.origin.y + frame.size.height > self.height { frame.size.height -= ( frame.origin.y + frame.size.height ) - Int32( self.height ) }
@@ -247,8 +261,13 @@ public class Screen: Synchronizable
                 }
 
                 update( window )
-                window.refresh()
-                self.refresh()
+
+                managed.append( window )
+            }
+
+            managed.forEach
+            {
+                $0.refresh()
             }
 
             self.onUpdate.fire()
