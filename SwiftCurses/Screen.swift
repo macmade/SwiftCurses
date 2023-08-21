@@ -207,30 +207,33 @@ public class Screen: Synchronizable
             onResize()
             onKeyPress()
 
-            var managed: [ ManagedWindow ] = []
+            var managed: [ ( priority: Int, window: ManagedWindow ) ] = []
 
             self.windows.forEach
             {
-                var frame:  Rect
-                let style:  ManagedWindow.Style
-                let update: ( ManagedWindow ) -> Void
-                let render: Bool
+                var frame:    Rect
+                let style:    ManagedWindow.Style
+                let update:   ( ManagedWindow ) -> Void
+                let render:   Bool
+                let priority: Int
 
                 switch $0
                 {
                     case .left( let info ):
 
-                        frame  = info.frame
-                        style  = info.style
-                        update = info.update
-                        render = true
+                        frame    = info.frame
+                        style    = info.style
+                        update   = info.update
+                        render   = true
+                        priority = 0
 
                     case .right( let builder ):
 
-                        frame  = builder.desiredFame
-                        style  = builder.style
-                        update = builder.render( on: )
-                        render = builder.shouldBeRendered()
+                        frame    = builder.desiredFame
+                        style    = builder.style
+                        update   = builder.render( on: )
+                        render   = builder.shouldBeRendered()
+                        priority = builder.priority
                 }
 
                 guard render
@@ -262,12 +265,16 @@ public class Screen: Synchronizable
 
                 update( window )
 
-                managed.append( window )
+                managed.append( ( priority, window ) )
             }
 
-            managed.forEach
+            managed.sorted
             {
-                $0.refresh()
+                $0.priority < $1.priority
+            }
+            .forEach
+            {
+                $0.window.refresh()
             }
 
             self.onUpdate.fire()

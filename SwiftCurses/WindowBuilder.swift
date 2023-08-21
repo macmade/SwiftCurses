@@ -36,6 +36,19 @@ public protocol WindowBuilder
         get
     }
 
+    var priority: Int
+    {
+        get
+    }
+
     func shouldBeRendered() -> Bool
     func render( on window: ManagedWindow )
+}
+
+public extension WindowBuilder
+{
+    static var defaultPriority: Int
+    {
+        0
+    }
 }

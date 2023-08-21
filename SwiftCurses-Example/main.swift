@@ -81,6 +81,7 @@ class TestWindow: WindowBuilder
 {
     var desiredFame = Rect( x: -1, y: -1, width: 50, height: 4 )
     var style       = ManagedWindow.Style.boxed
+    var priority    = TestWindow.defaultPriority
 
     func shouldBeRendered() -> Bool
     {
