@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05589B072A95DE8F00C22F10 /* XSLabsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 05589B062A95DE8F00C22F10 /* XSLabsSwift */; };
 		0564ACC12A8E0CAA00EF1950 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564ACC02A8E0CAA00EF1950 /* Color.swift */; };
 		0564ACC32A8E329300EF1950 /* Curses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564ACC22A8E329300EF1950 /* Curses.swift */; };
 		0564ACE42A8E83AB00EF1950 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564ACE32A8E83AB00EF1950 /* Screen.swift */; };
-		0564ACEE2A8E884400EF1950 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564ACED2A8E884400EF1950 /* Event.swift */; };
-		0564ACF22A8E889D00EF1950 /* EventObserverInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564ACF12A8E889D00EF1950 /* EventObserverInfo.swift */; };
-		0564ACFD2A8E989D00EF1950 /* Synchronizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564ACFC2A8E989D00EF1950 /* Synchronizable.swift */; };
 		0564AD052A8EA02500EF1950 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD042A8EA02500EF1950 /* main.swift */; };
 		0564AD0A2A8EA04900EF1950 /* libSwiftCurses.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0564AC752A8E0C5B00EF1950 /* libSwiftCurses.a */; };
 		0564AD0E2A8EA0C600EF1950 /* libncurses.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0564AD0D2A8EA0C000EF1950 /* libncurses.tbd */; };
@@ -22,7 +20,6 @@
 		0564AD432A8F6B1700EF1950 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD422A8F6B1700EF1950 /* Window.swift */; };
 		0564AD452A8F6FF600EF1950 /* ManagedWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD442A8F6FF600EF1950 /* ManagedWindow.swift */; };
 		0564AD792A90E2A300EF1950 /* WindowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD782A90E2A300EF1950 /* WindowBuilder.swift */; };
-		0564AD7C2A90E34100EF1950 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AD7B2A90E34100EF1950 /* Either.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,9 +100,6 @@
 		0564ACC02A8E0CAA00EF1950 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		0564ACC22A8E329300EF1950 /* Curses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curses.swift; sourceTree = "<group>"; };
 		0564ACE32A8E83AB00EF1950 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
-		0564ACED2A8E884400EF1950 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		0564ACF12A8E889D00EF1950 /* EventObserverInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventObserverInfo.swift; sourceTree = "<group>"; };
-		0564ACFC2A8E989D00EF1950 /* Synchronizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronizable.swift; sourceTree = "<group>"; };
 		0564AD022A8EA02500EF1950 /* SwiftCurses-Example */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "SwiftCurses-Example"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0564AD042A8EA02500EF1950 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0564AD0D2A8EA0C000EF1950 /* libncurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.tbd; path = usr/lib/libncurses.tbd; sourceTree = SDKROOT; };
@@ -115,7 +109,6 @@
 		0564AD422A8F6B1700EF1950 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		0564AD442A8F6FF600EF1950 /* ManagedWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedWindow.swift; sourceTree = "<group>"; };
 		0564AD782A90E2A300EF1950 /* WindowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowBuilder.swift; sourceTree = "<group>"; };
-		0564AD7B2A90E34100EF1950 /* Either.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05589B072A95DE8F00C22F10 /* XSLabsSwift in Frameworks */,
 				0564AD0E2A8EA0C600EF1950 /* libncurses.tbd in Frameworks */,
 				0564AD0A2A8EA04900EF1950 /* libSwiftCurses.a in Frameworks */,
 			);
@@ -170,7 +164,6 @@
 				0564AD3B2A8F639700EF1950 /* Geometry */,
 				0564AD442A8F6FF600EF1950 /* ManagedWindow.swift */,
 				0564ACE32A8E83AB00EF1950 /* Screen.swift */,
-				0564AD412A8F650D00EF1950 /* Utility */,
 				0564AD422A8F6B1700EF1950 /* Window.swift */,
 				0564AD782A90E2A300EF1950 /* WindowBuilder.swift */,
 			);
@@ -346,17 +339,6 @@
 			path = Geometry;
 			sourceTree = "<group>";
 		};
-		0564AD412A8F650D00EF1950 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				0564AD7B2A90E34100EF1950 /* Either.swift */,
-				0564ACED2A8E884400EF1950 /* Event.swift */,
-				0564ACF12A8E889D00EF1950 /* EventObserverInfo.swift */,
-				0564ACFC2A8E989D00EF1950 /* Synchronizable.swift */,
-			);
-			path = Utility;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -381,6 +363,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				05589B092A95DFDF00C22F10 /* PBXTargetDependency */,
 			);
 			name = SwiftCurses;
 			productName = SwiftCurses;
@@ -401,6 +384,9 @@
 				0564AD0C2A8EA04900EF1950 /* PBXTargetDependency */,
 			);
 			name = "SwiftCurses-Example";
+			packageProductDependencies = (
+				05589B062A95DE8F00C22F10 /* XSLabsSwift */,
+			);
 			productName = "SwiftCurses-Example";
 			productReference = 0564AD022A8EA02500EF1950 /* SwiftCurses-Example */;
 			productType = "com.apple.product-type.tool";
@@ -433,6 +419,9 @@
 				Base,
 			);
 			mainGroup = 0564AC6C2A8E0C5B00EF1950;
+			packageReferences = (
+				05589B052A95DE8F00C22F10 /* XCRemoteSwiftPackageReference "XSLabsSwift" */,
+			);
 			productRefGroup = 0564AC762A8E0C5B00EF1950 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -448,17 +437,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0564ACEE2A8E884400EF1950 /* Event.swift in Sources */,
 				0564AD792A90E2A300EF1950 /* WindowBuilder.swift in Sources */,
 				0564ACC32A8E329300EF1950 /* Curses.swift in Sources */,
 				0564AD3A2A8F639300EF1950 /* Rect.swift in Sources */,
-				0564ACFD2A8E989D00EF1950 /* Synchronizable.swift in Sources */,
 				0564AD452A8F6FF600EF1950 /* ManagedWindow.swift in Sources */,
 				0564AD3D2A8F63A400EF1950 /* Point.swift in Sources */,
 				0564AD402A8F63AE00EF1950 /* Size.swift in Sources */,
 				0564AD432A8F6B1700EF1950 /* Window.swift in Sources */,
-				0564AD7C2A90E34100EF1950 /* Either.swift in Sources */,
-				0564ACF22A8E889D00EF1950 /* EventObserverInfo.swift in Sources */,
 				0564ACC12A8E0CAA00EF1950 /* Color.swift in Sources */,
 				0564ACE42A8E83AB00EF1950 /* Screen.swift in Sources */,
 			);
@@ -475,6 +460,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		05589B092A95DFDF00C22F10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 05589B082A95DFDF00C22F10 /* XSLabsSwift */;
+		};
 		0564AD0C2A8EA04900EF1950 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0564AC742A8E0C5B00EF1950 /* SwiftCurses */;
@@ -562,6 +551,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		05589B052A95DE8F00C22F10 /* XCRemoteSwiftPackageReference "XSLabsSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/macmade/XSLabsSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		05589B062A95DE8F00C22F10 /* XSLabsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05589B052A95DE8F00C22F10 /* XCRemoteSwiftPackageReference "XSLabsSwift" */;
+			productName = XSLabsSwift;
+		};
+		05589B082A95DFDF00C22F10 /* XSLabsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05589B052A95DE8F00C22F10 /* XCRemoteSwiftPackageReference "XSLabsSwift" */;
+			productName = XSLabsSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0564AC6D2A8E0C5B00EF1950 /* Project object */;
 }
