@@ -477,7 +477,7 @@
 			baseConfigurationReference = 0564AC862A8E0C7C00EF1950 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
 			};
 			name = Debug;
 		};
@@ -486,7 +486,7 @@
 			baseConfigurationReference = 0564AC872A8E0C7C00EF1950 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
 			};
 			name = Release;
 		};
